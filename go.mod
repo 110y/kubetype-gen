@@ -1,6 +1,6 @@
-module istio.io/tools
+module github.com/110y/kubetype-gen
 
-go 1.15
+go 1.16
 
 require (
 	cloud.google.com/go v0.66.0 // indirect
