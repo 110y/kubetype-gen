@@ -35,7 +35,7 @@ For example:
 
 `${GOPATH}/bin/kubetype-gen -i istio.io/api/authentication/... -p istio.io/api/kube/apis`
 
-The tool can also be used with `go run`, e.g. `go run vendor/istio.io/tools/cmd/kubetype-gen/main.go ...`
+The tool can also be used with `go run`, e.g. `go run vendor/github.com/110y/kubetype-gen/cmd/kubetype-gen/main.go ...`
 
 ### Package Tags
 
@@ -118,7 +118,7 @@ run the generator manually so you have direct control over the input packages,
 e.g.
 
 ```bash
-${GOPATH}/bin/deepcopy-gen -i istio.io/api/authentication/... -O zz_generated.deepcopy -h vendor/istio.io/tools/cmd/kubetype-gen/boilerplate.go.txt
+${GOPATH}/bin/deepcopy-gen -i istio.io/api/authentication/... -O zz_generated.deepcopy -h vendor/github.com/110y/kubetype-gen/cmd/kubetype-gen/boilerplate.go.txt
 ```
 
 #### Protobuf Serializers

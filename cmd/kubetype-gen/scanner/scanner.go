@@ -24,8 +24,8 @@ import (
 	"k8s.io/gengo/generator"
 	"k8s.io/gengo/types"
 
-	"istio.io/tools/cmd/kubetype-gen/generators"
-	"istio.io/tools/cmd/kubetype-gen/metadata"
+	"github.com/110y/kubetype-gen/cmd/kubetype-gen/generators"
+	"github.com/110y/kubetype-gen/cmd/kubetype-gen/metadata"
 )
 
 const (

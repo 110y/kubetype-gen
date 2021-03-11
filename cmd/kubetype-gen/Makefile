@@ -39,7 +39,7 @@ run-negative-defaults-empty-group-test: check-env
 	@echo "Running $@"
 	$(eval $@_output = $(call kubetype-gen,./testdata/test_input/negative/defaults/emptygroup,fail))
 	@echo "${$@_output}" | grep -q "Errors occurred while scanning input.  See previous output for details."; test $$? || (echo "kubetype-gen command should have failed" && echo "${$@_output}" && false)
-	@echo "${$@_output}" | grep -q "Invalid Group/Version for package istio.io/tools/cmd/kubetype-gen/testdata/test_input/negative/defaults/emptygroup, Group not specified for Group/Version: groupversion"; test $$? || (echo "negative/defaults/emptygroup test failed" && echo "${$@_output}" && false)
+	@echo "${$@_output}" | grep -q "Invalid Group/Version for package github.com/110y/kubetype-gen/cmd/kubetype-gen/testdata/test_input/negative/defaults/emptygroup, Group not specified for Group/Version: groupversion"; test $$? || (echo "negative/defaults/emptygroup test failed" && echo "${$@_output}" && false)
 
 run-negative-defaults-invalid-group-version-test: check-env
 	@echo "Running $@"
@@ -51,7 +51,7 @@ run-negative-types-test: check-env
 	@echo "Running $@"
 	$(eval $@_output = $(call kubetype-gen,./testdata/test_input/negative/types,fail))
 	@echo "${$@_output}" | grep -q "Errors occurred while scanning input.  See previous output for details."; test $$? || (echo "kubetype-gen command should have failed" && echo "${$@_output}" && false)
-	@echo "${$@_output}" | grep -qE "duplicate kube types specified for .*/test_output/fail/group/version.AGoodType.  duplicated by: \[istio.io/tools/cmd/kubetype-gen/testdata/test_input/negative/types.(AGoodType|DuplicateKubeType) istio.io/tools/cmd/kubetype-gen/testdata/test_input/negative/types.(AGoodType|DuplicateKubeType)\]"; test $$? || (echo "types.DuplicateKubeType test failed" && echo "${$@_output}" && false)
+	@echo "${$@_output}" | grep -qE "duplicate kube types specified for .*/test_output/fail/group/version.AGoodType.  duplicated by: \[github.com/110y/kubetype-gen/cmd/kubetype-gen/testdata/test_input/negative/types.(AGoodType|DuplicateKubeType) github.com/110y/kubetype-gen/cmd/kubetype-gen/testdata/test_input/negative/types.(AGoodType|DuplicateKubeType)\]"; test $$? || (echo "types.DuplicateKubeType test failed" && echo "${$@_output}" && false)
 	@echo "${$@_output}" | grep -q "Invalid Group/Version for type .*/test_input/negative/types.EmptyGroup: groupversion"; test $$? || (echo "types.EmptyGroup test failed" && echo "${$@_output}" && false)
 	@echo "${$@_output}" | grep -q "Could not calculate Group/Version for type .*/test_input/negative/types.InvalidGroupVersion: invalid group version 'group/version/version' specified"; test $$? || (echo "types.InvalidGroupVersion test failed" && echo "${$@_output}" && false)
 	@echo "${$@_output}" | grep -q "Invalid Group/Version for type .*/test_input/negative/types.NoGroupVersion: <nil>"; test $$? || (echo "types.NoGroupVersion test failed" && echo "${$@_output}" && false)

@@ -1,6 +1,0 @@
-apiVersion: kpt.dev/v1alpha1
-kind: Kptfile
-metadata:
-  name: gke_cluster_resources
-packageMetadata:
-  shortDescription: used for setup gke cluster with create_cluster.sh

@@ -20,7 +20,7 @@ import (
 	"k8s.io/gengo/generator"
 	"k8s.io/gengo/types"
 
-	"istio.io/tools/cmd/kubetype-gen/metadata"
+	"github.com/110y/kubetype-gen/cmd/kubetype-gen/metadata"
 )
 
 // NewPackageGenerator generates source for a scanned package, specifically k8s styled doc.go, types.go and register.go files
